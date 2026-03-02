@@ -49,7 +49,7 @@ class OnlineSalesRegisterCollector:
         for item in self.__name_items:
             if item in self.__item_price:
                 total.append(self.__item_price[item])
-        if len(total) > 10:
+        if self.__number_items > 10:
             return sum(total) - sum(total)/10
         else:
             return sum(total)
@@ -61,7 +61,7 @@ class OnlineSalesRegisterCollector:
             if self.__tax_rate[item] == 20:
                 twenty_percent_tax.append(item)
                 total.append(self.__item_price[item]*0.2)
-        if len(total) > 10:
+        if self.__number_items > 10:
             return sum(total) - sum(total)/10
         else:
             return sum(total)
@@ -73,7 +73,7 @@ class OnlineSalesRegisterCollector:
             if self.__tax_rate[item] == 10:
                 ten_percent_tax.append(item)
                 total.append(self.__item_price[item]*0.1)
-        if len(total) > 10:
+        if self.__number_items > 10:
             return sum(total) - sum(total)/10
         else:
             return sum(total)
